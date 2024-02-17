@@ -1,0 +1,10 @@
+.phpDiv {
+    width: 30%;
+    float: left;
+    padding-left: 30px;
+    line-height: 4.25rem;
+    font-size: 1.7rem;
+    color:red;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 0.5px;
+}

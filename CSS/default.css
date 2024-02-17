@@ -15,3 +15,105 @@ body {
     text-align: center;
     color: white;
 }
+
+header {
+    background: rgb(33, 32, 32);
+    width: 100%;
+    height: 4.25rem;
+    position: fixed;
+}
+
+
+.logo {
+    width: 30%;
+    float: left;
+    text-align: left;
+    line-height: 4.25rem;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    letter-spacing: 0.3rem;
+}
+
+nav {
+    float: right;
+    line-height: 4.25rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.25rem;
+    font-size: 1.2rem;
+    color: white;
+    padding: 1.4rem 1rem;
+    margin: 0 0.1rem;
+    font-weight: 700;
+}
+
+nav a:hover {
+    background: rgb(30, 29, 29);
+    color: rgb(247, 156, 223);
+}
+
+.bannerArea {
+    background-image: url(/Imgs/PolaskeConsultingBanner.png);
+    background-size: cover;
+    background-position: center center;
+    top: 6.25rem;
+    height: 30%;
+    width: 100%;
+    position: fixed;
+}
+
+.bannerArea {
+    background-image: url(/IMG/360_F_581529147_WU2dd2WR6CMKN81hX7jy8QB9vqJQGqOa.jpg);
+    background-size: cover;
+    background-position: center center;
+    top: 6.25rem;
+    height: 30%;
+    width: 100%;
+    position: fixed;
+}
+
+.bannerArea::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background:rgb(21, 20, 20);
+    opacity: 0.6;
+    z-index: -1;
+    border: 1.5px solid black;
+}
+
+.bannerArea h2 {
+    padding-top: 2%;
+    font-size: 6.25rem;
+    color:white;
+    -webkit-text-fill-color: rgb(184, 12, 12);
+    -webkit-text-stroke: 0.5px;
+}
+
+.contentArea {
+    width: 100%;
+    height: 70rem;
+    position: relative;
+    background: rgb(30, 29, 29);
+    top: 24rem;
+}
+
+.contentArea h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-top: 1.8rem;
+    letter-spacing: 0.4rem;
+}
+

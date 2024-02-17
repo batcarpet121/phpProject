@@ -16,23 +16,16 @@
                 <div class="logo">
                     <a href="/PHP/index.php">Aaron's Diner</a>
                 </div>
-                    <div class="phpDiv">
-                        <?php 
-                            $date = date("m-d-Y");
-                            $today = date("l");
-                            echo "Today is: $today, $date";
-                        ?>
-                    </div>
                 <nav>
                     <a href="/PHP/index.php">Home</a>
-                    <a href="#">Breakfast</a>
-                    <a href="#">Lunch</a>
-                    <a href="#">Dinner</a>
-                    <a href="#">About</a>
+                    <a href="/PHP/breakfast.php">Breakfast</a>
+                    <a href="/PHP/lunch.php">Lunch</a>
+                    <a href="/PHP/dinner.php">Dinner</a>
                 </nav>
             </div>
         </header>
     </div>
+
 
     <div class="bannerArea">
         <h2>Welcome to Aaron's Diner</h2>
@@ -44,55 +37,74 @@
 
             <section id="imgSec">
                 <div class="imgContainer">
-                    <div class="textWrapper">
-                        <p>Breakfast</p>
-                        <ul class="menuList">
-                            <li>
-                                Eggs
-                            </li>
-                            <li>
-                                Bacon
-                            </li>
-                            <li>
-                                Cheese
-                            </li>
-                        </ul>
-                    </div>
-                    <img class="menu" src="/IMG/Breakfast.jpg" alt="Breakfast Menu">
 
-                    <div class="textWrapper" id="lunch">
-                        <p>Lunch</p>
-                        <ul class="menuList">
-                            <li>
-                                Steak
-                            </li>
-                            <li>
-                                Lasagna
-                            </li>
-                            <li>
-                                Chicken & Waffles
-                            </li>
-                        </ul>
-                    </div>
-                    <img class="menu" src="/IMG/lunch.jpg" alt="Lunch Menu">
+                    <a href="/PHP/breakfast.php" class="menuA">
+                        <div class="textWrapper" id="breakfast">
+                            <p>Breakfast</p>
+                            <ul class="menuList">
+                                <li>Classic Pancake Stack</li>
+                                <li>Avocado Toast Delight</li>
+                                <li>Healthy Acai Bowl</li>
+                                <li>Egg and Cheese Croissant</li>
+                                <li>Greek Yogurt Parfait</li>
+                            </ul>
+                        </div>
+                        <img class="menu" src="/IMG/Breakfast.jpg" alt="Breakfast Menu">
+                    </a>
 
-                    <div class="textWrapper" id="dinner">
-                        <p>Dinner</p>
-                        <ul class="menuList">
-                            <li>
-                                Salad
-                            </li>
-                            <li>
-                                Soup
-                            </li>
-                            <li>
-                                Pasta
-                            </li>
-                        </ul>
-                    </div>
-                    <img class="menu" src="/IMG/Dinner.jpg" alt="Dinner Menu">
+                    <a href="/PHP/lunch.php" class="menuA">
+                        <div class="textWrapper" id="lunch">
+                            <p>Lunch</p>
+                            <ul class="menuList">
+                                <li>Classic Caesar Salad</li>
+                                <li>Caprese Panini</li>
+                                <li>Spicy Chicken Wrap</li>
+                                <li>Quinoa and Roasted Vegetable Bowl</li>
+                                <li>Mediterranean Falafel Plate</li>
+                            </ul>
+                        </div>
+                        <img class="menu" src="/IMG/lunch.jpg" alt="Lunch Menu">
+                    </a>
+
+                    <a href="/PHP/dinner.php" class="menuA">
+                        <div class="textWrapper" id="dinner">
+                            <p>Dinner</p>
+                            <ul class="menuList">
+                                <li>Grilled Salmon with Lemon-Dill Sauce</li>
+                                <li>Pasta Primavera</li>
+                                <li>Steakhouse Filet Mignon</li>
+                                <li>Vegetarian Thai Green Curry</li>
+                                <li>Lobster Ravioli in Creamy Tomato Sauce</li>
+                            </ul>
+                        </div>
+                        <img class="menu" src="/IMG/breakfast.jpg" alt="Dinner Menu">
+                    </a>
                 </div>
             </section>
+            <div class="phpDiv">
+                <?php
+                $date = date("m-d-Y");
+                $today = date("l");
+
+                $dailySpecial = match ($today) {
+                    "Monday" => "Classic Caesar Salad",
+                    "Tuesday" => "Caprese Panini",
+                    "Wednesday" => "Spicy Chicken Wrap",
+                    "Thursday" => "Quinoa and Roasted Vegetable Bowl",
+                    "Friday" => "Mediterranean Falafel Plate",
+                    "Saturday" => "No Special Today",
+                    "Sunday" => "No Special Today",
+                    default => null
+                };
+
+                echo "Today is: $today, $date ";
+                if ($dailySpecial != null) {
+                    echo "<br>Special of the day is: <br>$dailySpecial";
+                } else {
+                    echo "THINGS HAVE GONE WRONG!!";
+                }
+                ?>
+            </div>
             <div id="listWrapper">
                 <div class="listDiv">
                     <ul class="listEdit" id="dayList">
