@@ -40,17 +40,40 @@
         <div class="wrapper">
             <h2>Lunch Menu HERE!</h2>
             <?php
-                include "CafeMenuDataStore.php";
-                $cafeDS = new CafeMenuDataStore("lunchMenu.csv");
+                // include "CafeMenuDataStore.php";
+                // $cafeDS = new CafeMenuDataStore("lunchMenu.csv");
 
-                while ((($menuItem = $cafeDS->getNext()) != NULL)){
-                    echo '<div class="menuItems"';
-                    echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
-                    echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
-                    echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
-                    echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
-                    echo '</div>';
+                // while ((($menuItem = $cafeDS->getNext()) != NULL)){
+                //     echo '<div class="menuItems"';
+                //     echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
+                //     echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
+                //     echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
+                //     echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
+                //     echo '</div>';
+                // }
+
+
+                $hostname = "localhost";
+                $user = "srobinett_cafe";   
+                $passwd = "CSCI213!db";
+                $dbname = "srobinett_cafe";
+            
+                #Step 1. to connect to DB
+                $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+
+
+                $result = $myConn->query("SELECT * from cafe");
+
+                while (($row = $result->fetch_assoc()) != null){
+            
+                    echo "$row[cafe_name]<br>";
+            
                 }
+                echo "DONE";
+            
+            
+
+                
 
             ?>
         </div>
