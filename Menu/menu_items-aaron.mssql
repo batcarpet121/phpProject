@@ -1,0 +1,102 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 10.123.0.52:3306
+-- Generation Time: Feb 19, 2024 at 07:26 PM
+-- Server version: 8.0.30
+-- PHP Version: 7.0.33-0+deb9u12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `srobinett_cafe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_items`
+--
+
+CREATE TABLE `menu_items` (
+  `cafe_id` int NOT NULL,
+  `menu_id` int NOT NULL,
+  `menu_descr` varchar(256) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `menu_price` float(10,2) NOT NULL,
+  `menu_meal` int DEFAULT NULL,
+  `menu_image_name` text COLLATE utf8mb3_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
+
+--
+-- Dumping data for table `menu_items`
+--
+
+INSERT INTO `menu_items` (`cafe_id`, `menu_id`, `menu_descr`, `menu_price`, `menu_meal`, `menu_image_name`) VALUES
+(2, 4, 'Classic Pancake Stack', 8.99, 1, 'breakfast1.jpg'),
+(2, 6, 'Avocado Toast Delight', 10.49, 1, 'breakfast3.jpg'),
+(2, 7, 'Healthy Acai Bowl', 12.99, 1, 'breakfast4.jpg'),
+(2, 8, 'Egg and Cheese Croissant', 6.99, 1, 'breakfast4.png'),
+(2, 9, 'Greek Yogurt Parfait', 9.50, 1, 'breakfast5.jpg'),
+(2, 10, 'Classic Caesar Salad', 11.99, 2, 'lunch1.jpg'),
+(2, 11, 'Caprese Panini', 13.49, 2, 'lunch2.jpg'),
+(2, 12, 'Spicy Chicken Wrap', 14.99, 2, 'lunch3.jpg'),
+(2, 13, 'Quinoa and Roasted Vegetable Bowl', 12.50, 2, 'lunch4.jpg'),
+(2, 14, 'Mediterranean Falafel Plate', 15.99, 2, 'lunch5.jpg'),
+(2, 15, 'Grilled Salmon with Lemon-Dill Sauce', 18.99, 3, 'dinner1.jpg'),
+(2, 16, 'Pasta Primavera', 16.49, 3, 'dinner2.jpg'),
+(2, 17, 'Steakhouse Filet Mignon', 24.99, 3, 'dinner3.jpg'),
+(2, 18, 'Vegetarian Thai Green Curry', 17.00, 3, 'dinner4.jpg'),
+(2, 19, 'Lobster Ravioli in Creamy Tomato Sauce', 22.99, 3, 'dinner5.jpg'),
+(2, 20, 'Midnight Burger Bliss', 13.99, 4, 'latenight1.jpg'),
+(2, 21, 'Loaded Nachos Fiesta', 11.49, 4, 'latenight2.jpg'),
+(2, 22, 'Spicy Chicken Wings Platter', 15.99, 4, 'latenight3.jpg'),
+(2, 23, 'Margarita Pizza', 12.50, 4, 'latenight4.jpg'),
+(2, 24, 'Chocolate Lava Cake', 8.99, 4, 'latenight5.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  ADD PRIMARY KEY (`menu_id`),
+  ADD KEY `cafe_fk` (`cafe_id`),
+  ADD KEY `meal_fk` (`menu_meal`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  MODIFY `menu_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `menu_items`
+--
+ALTER TABLE `menu_items`
+  ADD CONSTRAINT `cafe_fk` FOREIGN KEY (`cafe_id`) REFERENCES `cafe` (`cafe_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `meal_fk` FOREIGN KEY (`menu_meal`) REFERENCES `meal` (`meal_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -8,3 +8,20 @@
     -webkit-text-fill-color: white;
     -webkit-text-stroke: 0.5px;
 }
+
+h2 {
+    
+}
+
+.php_p {
+    display: block;
+    margin: 10px;
+}
+
+.menuItems {
+border: 2px solid red;
+width: 50%;
+margin: 20px auto;
+padding: 15px;
+text-align: left;
+}

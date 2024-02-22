@@ -43,13 +43,14 @@
                 include "CafeMenuDataStore.php";
                 $cafeDS = new CafeMenuDataStore("breakfastMenu.csv");
 
-                while ((($menuItem = $cafeDS->getNext()) != NULL)){
-                    echo "Name: ", $menuItem->getItemName(), "<br>";
-                    echo "Price: $", $menuItem->getItemPrice(), "<br>";
-                    echo "Type: ", $menuItem->getItemType(), "<br>";
-                    echo "Img: ", $menuItem->getItemImg(), "<br>";
+                while ($menuItem = $cafeDS->getNext()) {
+                    echo '<div class="menuItems"';
+                    echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
+                    echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
+                    echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
+                    echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
+                    echo '</div>';
                 }
-
             ?>
         </div>
     </div>
