@@ -53,24 +53,33 @@
                 // }
 
 
-                $hostname = "localhost";
-                $user = "srobinett_cafe";   
-                $passwd = "CSCI213!db";
-                $dbname = "srobinett_cafe";
-            
-                #Step 1. to connect to DB
-                $myConn = new mysqli($hostname, $user, $passwd, $dbname);
+                function connectDB()
+                {
+                    $hostname = "localhost";
+                    $user = "srobinett_cafe";   
+                    $passwd = "CSCI213!db";
+                    $dbname = "srobinett_cafe";
+                
+                    $conn = new mysqli($hostname, $user, $passwd, $dbname);
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    return $conn;
+                }
 
+                $myConn = connectDB();
+                if ($myConn == null) {
+                    die("DB connection failed");
+                  }
 
-                $result = $myConn->query("SELECT * from cafe");
+                  $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 2");
 
                 while (($row = $result->fetch_assoc()) != null){
             
-                    echo "$row[cafe_name]<br>";
+                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"';
             
                 }
                 echo "DONE";
-            
             
 
                 

@@ -21,6 +21,8 @@
                     $date = date("m-d-Y");
                     $today = date("l");
                     echo "Today is: $today, $date";
+                    // Add form here maybe?
+
                     ?>
                 </div>
                 <nav>
@@ -40,7 +42,6 @@
         <div class="wrapper">
             <h2>Breakfast Menu HERE!</h2>
             <?php
-                // include "CafeMenuDataStore.php";
 
                 function connectDB()
                 {
@@ -56,22 +57,22 @@
                     return $conn;
                 }
 
-                // $cafeDS = new CafeMenuDataStore("breakfastMenu.csv");
-
                 $myConn = connectDB();
                 if ($myConn == null) {
                     die("DB connection failed");
                   }
 
-                $result = $myConn->query("SELECT * from menu_items WHERE cafe_id = 2");
+                $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 1");
 
                 while (($row = $result->fetch_assoc()) != null){
             
-                    echo "$row[menu_descr]<br>";
-                    // var_dump($row);
+                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"';
             
                 }
                 echo "DONE";
+
+                // include "CafeMenuDataStore.php";
+                // $cafeDS = new CafeMenuDataStore("breakfastMenu.csv");
 
                 // while ($menuItem = $cafeDS->getNext()) {
                 //     echo '<div class="menuItems>"';

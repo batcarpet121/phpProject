@@ -41,17 +41,45 @@
         <div class="wrapper">
             <h2>Dinner Menu HERE!</h2>
             <?php
-                include "CafeMenuDataStore.php";
-                $cafeDS = new CafeMenuDataStore("DinnerMenu.csv");
+                // include "CafeMenuDataStore.php";
+                // $cafeDS = new CafeMenuDataStore("DinnerMenu.csv");
 
-                while ((($menuItem = $cafeDS->getNext()) != NULL)){
-                    echo '<div class="menuItems"';
-                    echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
-                    echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
-                    echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
-                    echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
-                    echo '</div>';
+                // while ((($menuItem = $cafeDS->getNext()) != NULL)){
+                //     echo '<div class="menuItems"';
+                //     echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
+                //     echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
+                //     echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
+                //     echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
+                //     echo '</div>';
+                // }
+
+                function connectDB()
+                {
+                    $hostname = "localhost";
+                    $user = "srobinett_cafe";   
+                    $passwd = "CSCI213!db";
+                    $dbname = "srobinett_cafe";
+                
+                    $conn = new mysqli($hostname, $user, $passwd, $dbname);
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    return $conn;
                 }
+
+                $myConn = connectDB();
+                if ($myConn == null) {
+                    die("DB connection failed");
+                  }
+
+                  $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 3");
+
+                while (($row = $result->fetch_assoc()) != null){
+            
+                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"';
+            
+                }
+                echo "DONE";
 
             ?>
         </div>
