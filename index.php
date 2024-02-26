@@ -14,10 +14,10 @@
         <header>
             <div class="wrapper">
                 <div class="logo">
-                    <a href="/PHP/index.php">Aaron's Diner</a>
+                    <a href="index.php">Aaron's Diner</a>
                 </div>
                 <nav>
-                    <a href="/PHP/index.php">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="/PHP/breakfast.php">Breakfast</a>
                     <a href="/PHP/lunch.php">Lunch</a>
                     <a href="/PHP/dinner.php">Dinner</a>
@@ -82,7 +82,7 @@
                 </div>
             </section>
             <div class="phpDiv">
-                <?php
+                <!-- <?php
                 $date = date("m-d-Y");
                 $today = date("l");
 
@@ -102,8 +102,8 @@
                     echo "<br>Special of the day is: <br>$dailySpecial";
                 } else {
                     echo "THINGS HAVE GONE WRONG!!";
-                }
-                ?>
+                };
+                ?> -->
             </div>
             <div id="listWrapper">
                 <div class="listDiv">

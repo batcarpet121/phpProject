@@ -14,7 +14,7 @@
         <header>
             <div class="wrapper">
                 <div class="logo">
-                    <a href="/PHP/index.php">Aaron's Diner</a>
+                    <a href="index.php">Aaron's Diner</a>
                 </div>
                 <div class="phpDiv">
                     <?php
@@ -26,7 +26,7 @@
                     ?>
                 </div>
                 <nav>
-                    <a href="/PHP/index.php">Home</a>
+                    <a href="index.php">Home</a>
                     <a href="/PHP/breakfast.php">Breakfast</a>
                     <a href="/PHP/lunch.php">Lunch</a>
                     <a href="/PHP/dinner.php">Dinner</a>
