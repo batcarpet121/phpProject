@@ -74,7 +74,7 @@
 
                 while (($row = $result->fetch_assoc()) != null) {
                     echo '<div class="menuRow">';
-                    echo $row['menu_descr'] . ', ' . $row['menu_price'] . ' <img class="menuItem" src="/IMG/' . $row["menu_image_name"] . '"> <br>';
+                    echo $row['menu_descr'] . ', ' . $row['menu_price'] . ' <img class="menuItem" src="../IMG/' . $row["menu_image_name"] . '"> <br>';
                     echo '</div>';
                 }
                 echo "DONE";

@@ -82,7 +82,7 @@
                 </div>
             </section>
             <div class="phpDiv">
-                <!-- <?php
+                <?php
                 $date = date("m-d-Y");
                 $today = date("l");
 
@@ -103,7 +103,7 @@
                 } else {
                     echo "THINGS HAVE GONE WRONG!!";
                 };
-                ?> -->
+                ?>
             </div>
             <div id="listWrapper">
                 <div class="listDiv">

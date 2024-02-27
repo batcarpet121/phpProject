@@ -62,7 +62,7 @@ nav a:hover {
 
 
 .bannerArea {
-    background-image: url(/PHP/dinerBackground.jpg);
+    background-image: url(../IMG/dinerBackground.jpg);
     background-size: cover;
     background-position: center center;
     top: 6.25rem;
