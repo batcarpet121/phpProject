@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/default.css">
-    <link rel="stylesheet" href="../CSS/breakfastStyles.css">
+    <link rel="stylesheet" href="/CSS/default.css">
+    <link rel="stylesheet" href="/CSS/breakfastStyles.css">
     <title>Aaron's Diner - Breakfast</title>
 </head>
 
@@ -65,9 +65,9 @@
                 $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 1");
 
                 while (($row = $result->fetch_assoc()) != null){
-            
-                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"';
-            
+                    echo '<div class="menuRow">';
+                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"> <br>';
+                    echo '</div>';
                 }
                 echo "DONE";
 
@@ -84,6 +84,35 @@
                 // }
             ?>
         </div>
+
+                    
+    <div id="listWrapper">
+                <div class="listDiv">
+                    <ul class="listEdit" id="dayList">
+                        <li class="listHead">Business Hours</li>
+                        <li>MON: 8:00am - 6:00pm</li>
+                        <li>TUE: 8:00am - 6:00pm</li>
+                        <li>WED: 8:00am - 6:00pm</li>
+                        <li>THU: 8:00am - 6:00pm</li>
+                        <li>FRI: 8:00am - 6:00pm</li>
+                        <li>SAT: 10:00am - 4:00pm</li>
+                        <li>SUN: 10:00am - 4:00pm</li>
+                    </ul>
+                </div>
+                <div class="listDiv">
+                    <ul class="listEdit">
+                        <li class="listHead">Location</li>
+                        <li>1452 7th Ave S</li>
+                    </ul>
+                </div>
+                <div class="listDiv">
+                    <ul class="listEdit">
+                        <li class="listHead">Phone Number</li>
+                        <li>(406)750-5642</li>
+                    </ul>
+                </div>
+            </div>
+
     </div>
 
 </body>

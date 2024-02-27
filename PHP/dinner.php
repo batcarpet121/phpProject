@@ -73,13 +73,13 @@
                   }
 
                   $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 3");
-
-                while (($row = $result->fetch_assoc()) != null){
-            
-                    echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"';
-            
-                }
-                echo "DONE";
+                  
+                  while (($row = $result->fetch_assoc()) != null){
+                      echo '<div class="menuRow">';
+                      echo $row['menu_descr'].', '.$row['menu_price'].' <img class="menuItem" src="/IMG/'.$row["menu_image_name"].'"> <br>';
+                      echo '</div>';
+                  }
+                  echo "DONE";
 
             ?>
         </div>

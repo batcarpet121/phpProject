@@ -49,7 +49,7 @@
                                 <li>Greek Yogurt Parfait</li>
                             </ul>
                         </div>
-                        <img class="menu" src="/IMG/Breakfast.jpg" alt="Breakfast Menu">
+                        <img class="menu" src="IMG/Breakfast.jpg" alt="Breakfast Menu">
                     </a>
 
                     <a href="/PHP/lunch.php" class="menuA">
@@ -63,7 +63,7 @@
                                 <li>Mediterranean Falafel Plate</li>
                             </ul>
                         </div>
-                        <img class="menu" src="/IMG/lunch.jpg" alt="Lunch Menu">
+                        <img class="menu" src="IMG/lunch.jpg" alt="Lunch Menu">
                     </a>
 
                     <a href="/PHP/dinner.php" class="menuA">
@@ -77,7 +77,7 @@
                                 <li>Lobster Ravioli in Creamy Tomato Sauce</li>
                             </ul>
                         </div>
-                        <img class="menu" src="/IMG/breakfast.jpg" alt="Dinner Menu">
+                        <img class="menu" src=".../IMG/Breakfast.jpg" alt="Dinner Menu">
                     </a>
                 </div>
             </section>
