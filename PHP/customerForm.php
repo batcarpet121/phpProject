@@ -18,6 +18,7 @@
     <input type="text" id="passwd" name="passwd"> <br>
     
     <input type="submit" value="Submit">
+</form>
     
 </body>
 </html>

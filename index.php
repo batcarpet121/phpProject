@@ -77,7 +77,7 @@
                                 <li>Lobster Ravioli in Creamy Tomato Sauce</li>
                             </ul>
                         </div>
-                        <img class="menu" src=".../IMG/Breakfast.jpg" alt="Dinner Menu">
+                        <img class="menu" src="IMG/Breakfast.jpg" alt="Dinner Menu">
                     </a>
                 </div>
             </section>

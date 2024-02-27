@@ -60,18 +60,9 @@ nav a:hover {
     color: rgb(247, 156, 223);
 }
 
-.bannerArea {
-    background-image: url(/Imgs/PolaskeConsultingBanner.png);
-    background-size: cover;
-    background-position: center center;
-    top: 6.25rem;
-    height: 30%;
-    width: 100%;
-    position: fixed;
-}
 
 .bannerArea {
-    background-image: url(/IMG/360_F_581529147_WU2dd2WR6CMKN81hX7jy8QB9vqJQGqOa.jpg);
+    background-image: url(/IMG/dinerBackground.jpg);
     background-size: cover;
     background-position: center center;
     top: 6.25rem;
@@ -152,5 +143,5 @@ ul.listEdit {
 }
 
 #listWrapper {
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(68, 68, 68);
 }
