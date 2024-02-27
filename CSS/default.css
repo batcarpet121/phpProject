@@ -62,7 +62,7 @@ nav a:hover {
 
 
 .bannerArea {
-    background-image: url(/IMG/dinerBackground.jpg);
+    background-image: url(/PHP/dinerBackground.jpg);
     background-size: cover;
     background-position: center center;
     top: 6.25rem;
@@ -106,42 +106,4 @@ nav a:hover {
     margin: 0;
     margin-top: 1.8rem;
     letter-spacing: 0.4rem;
-}
-
-
-#listWrapper > ul {
-    padding: 1rem;
-    list-style-type: none;
-}
-
-div.listDiv {
-    text-align: left;
-    display: inline-block;
-    margin: 1.2rem 0.3rem 0.6rem 6rem;
-    letter-spacing: 0.4rem;
-    font-size: 1.4rem;
-    vertical-align: top;
-    color: white;
-}
-
-li.listHead {
-    list-style: none;
-    font-weight: bold;
-    border-bottom: 1.2px solid gray;
-}
-
-ul#dayList {
-    border-right: 2px solid rgb(247, 156, 223);
-    list-style-type: none;
-    padding-right: 30px;
-}
-
-ul.listEdit {
-    list-style-type: none;
-    margin-bottom: 10px;
-    line-height: 2rem;
-}
-
-#listWrapper {
-    background-color: rgb(68, 68, 68);
 }

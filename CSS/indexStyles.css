@@ -102,7 +102,7 @@ img.menu{
     -webkit-text-stroke: 0.5px;
 }
 
-/* 
+
 #listWrapper > ul {
     padding: 1rem;
     list-style-type: none;
@@ -124,7 +124,7 @@ li.listHead {
     border-bottom: 1.2px solid gray;
 }
 
-ul#dayList {
+#dayList {
     border-right: 2px solid rgb(247, 156, 223);
     list-style-type: none;
     padding-right: 30px;
@@ -138,4 +138,4 @@ ul.listEdit {
 
 #listWrapper {
     background-color: rgb(68, 68, 68);
-} */
+}

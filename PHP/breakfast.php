@@ -48,109 +48,52 @@
                 <input type="submit" value="Login">
             </form>
             <h2>Breakfast Menu HERE!</h2>
+
             <?php // PHP TO READ BREAKFAST MENU FROM DB
 
-            function connectDB()
-            {
-                $hostname = "localhost";
-                $user = "srobinett_cafe";
-                $passwd = "CSCI213!db";
-                $dbname = "srobinett_cafe";
+                function connectDB()
+                {
+                    $hostname = "localhost";
+                    $user = "srobinett_cafe";
+                    $passwd = "CSCI213!db";
+                    $dbname = "srobinett_cafe";
 
-                $conn = new mysqli($hostname, $user, $passwd, $dbname);
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
+                    $conn = new mysqli($hostname, $user, $passwd, $dbname);
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    return $conn;
                 }
-                return $conn;
-            }
 
-            $myConn = connectDB();
-            if ($myConn == null) {
-                die("DB connection failed");
-            }
+                $myConn = connectDB();
+                if ($myConn == null) {
+                    die("DB connection failed");
+                }
 
-            $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 1");
+                $result = $myConn->query("SELECT menu_descr, menu_price, menu_image_name from menu_items WHERE cafe_id = 2 AND menu_meal = 1");
 
-            while (($row = $result->fetch_assoc()) != null) {
-                echo '<div class="menuRow">';
-                echo $row['menu_descr'] . ', ' . $row['menu_price'] . ' <img class="menuItem" src="/IMG/' . $row["menu_image_name"] . '"> <br>';
-                echo '</div>';
-            }
-            echo "DONE";
+                while (($row = $result->fetch_assoc()) != null) {
+                    echo '<div class="menuRow">';
+                    echo $row['menu_descr'] . ', ' . $row['menu_price'] . ' <img class="menuItem" src="/IMG/' . $row["menu_image_name"] . '"> <br>';
+                    echo '</div>';
+                }
+                echo "DONE";
 
-            // include "CafeMenuDataStore.php";
-            // $cafeDS = new CafeMenuDataStore("breakfastMenu.csv");
+                // include "CafeMenuDataStore.php";
+                // $cafeDS = new CafeMenuDataStore("breakfastMenu.csv");
 
-            // while ($menuItem = $cafeDS->getNext()) {
-            //     echo '<div class="menuItems>"';
-            //     echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
-            //     echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
-            //     echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
-            //     echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
-            //     echo '</div>';
-            // }
+                // while ($menuItem = $cafeDS->getNext()) {
+                //     echo '<div class="menuItems>"';
+                //     echo '<p class="php_p">Name: ', $menuItem->getItemName(), '</p>';
+                //     echo '<p class="php_p">Price: $', $menuItem->getItemPrice(), '</p>';
+                //     echo '<p class="php_p">Type: ', $menuItem->getItemType(), '</p>';
+                //     echo '<p class="php_p">Img: ', $menuItem->getItemImg(), '</p>';
+                //     echo '</div>';
+                // }
 
             ?>
 
-            <?php
-
-            $name = "";
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $name = clean_input($_POST["name"]);
-            }
-
-            function clean_input($data)
-            {
-                $data = trim($data);
-                return $data;
-            }
-            ?>
-
-            <h2>Self-Processing PHP Form</h2>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                Name: <input type="text" name="name">
-                <br><br>
-                <input type="submit" name="submit" value="Submit">
-            </form>
-
-            <?php
-            if ($name != "") {
-                echo "<p>Welcome, " . $name . "!</p>";
-            }
-            ?>
-
-            <form action="" method="post">
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname"> <br>
-                <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lname"> <br>
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br>
-                <label for="passwd">Password:</label>
-                <input type="text" id="passwd" name="passwd"> <br>
-
-                <input type="submit" value="Submit">
-            </form>
-            <?php // PHP FOR THE CUSTOMER ACCOUNT CREATION TO ADD TO DB
-            $fname = $_POST['fname'];
-            $lname = $_POST['lname'];
-            $email = $_POST['email'];
-            $passwd = $_POST['passwd'];
-
-            $hashed_passwrd = password_hash($passwd, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO customer (cust_id, cust_fname, cust_lname, cust_email, cust_passwd_hash) VALUES 
-                      (null, '$fname', '$lname', '$email', '$hashed_passwrd')";
-
-
-            if ($conn->query($sql) == TRUE) {
-                echo "Welcome, " . $fname . "!";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-
-            ?>
-
-        </div>
+            
         <div id="listWrapper">
             <div class="listDiv">
                 <ul class="listEdit" id="dayList">
@@ -176,6 +119,40 @@
                     <li>(406)750-5642</li>
                 </ul>
             </div>
+        </div>
+
+            <form action="" method="post">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname"> <br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname"> <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br>
+                <label for="passwd">Password:</label>
+                <input type="text" id="passwd" name="passwd"> <br>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <?php // PHP FOR THE CUSTOMER ACCOUNT CREATION TO ADD TO DB
+                $fname = $_POST['fname'];
+                $lname = $_POST['lname'];
+                $email = $_POST['email'];
+                $passwd = $_POST['passwd'];
+
+                $hashed_passwrd = password_hash($passwd, PASSWORD_DEFAULT);
+                $sql = "INSERT INTO customer (cust_id, cust_fname, cust_lname, cust_email, cust_passwd_hash) VALUES 
+                        (null, '$fname', '$lname', '$email', '$hashed_passwrd')";
+
+
+                if ($conn->query($sql) == TRUE) {
+                    echo "Welcome, " . $fname . "!";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+
+            ?>
+
         </div>
 
     </div>
