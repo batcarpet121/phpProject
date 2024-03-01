@@ -145,6 +145,10 @@ nav a:hover {
     background-color: rgb(63, 42, 42);
 }
 
+#welcomeMsg {
+    font-size: 1.3rem;
+    color: rgb(218, 142, 142);;
+}
 
 
 
