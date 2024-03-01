@@ -71,7 +71,10 @@
 
                         if (password_verify($login_passwd, $db_passwd)) {
 
-                            echo '<p class="welcomeMsg">Welcome ' . $login_fname . '! </p>';
+                            echo '<h4 class="welcomeMsg">';
+                            echo 'Welcome ' . $login_fname . '!';
+                            echo '</h4>';
+                            
                         } else {
                             echo "Invalid password";
                         }
