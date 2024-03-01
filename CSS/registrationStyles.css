@@ -1,0 +1,63 @@
+/* background styles */
+
+/* Form Styles */
+.formCreator {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding-top: 5.2rem;
+    padding-bottom: 0.6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: left;
+    font-size: 1.6rem;
+    box-shadow: 0 0 15px rgb(215, 234, 211);
+    background-image: linear-gradient(to right, #e1cdcd 0%, #d0b2b2 51%, #e1cdcd 100%);
+    border-radius: 2px;
+    color: black;
+    line-height: 68px;
+}
+
+.formCreator form #fname,
+.formCreator form #lname,
+.formCreator form #email,
+.formCreator form #passwd {
+    color: white;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    background-color: rgb(78, 78, 78);
+    border-radius: 3px;
+}
+
+#fname {
+    margin-left: 15px;
+}
+#lname {
+    margin-left: 15px;
+}
+#email {
+    margin-left: 74px;
+}
+#passwd {
+    margin-left: 26px;
+}
+
+
+#submitButton {
+    border: 3px solid rgb(78, 78, 78);
+    margin-top: 20px;
+    margin-left: 110px;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    background-color: #f38787;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #222e24;
+}
+
+#submitButton:active {
+    background-color: #fd3e3e;
+}
+

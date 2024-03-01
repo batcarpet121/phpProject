@@ -14,13 +14,14 @@
         <header>
             <div class="wrapper">
                 <div class="logo">
-                    <a href="index.php">Aaron's Diner</a>
+                    <a href="http://www.aaron.steverobinett.net/">Aaron's Diner</a>
                 </div>
                 <nav>
-                    <a href="index.php">Home</a>
+                    <a href="http://www.aaron.steverobinett.net/">Home</a>
                     <a href="/PHP/breakfast.php">Breakfast</a>
                     <a href="/PHP/lunch.php">Lunch</a>
                     <a href="/PHP/dinner.php">Dinner</a>
+                    <a href="/PHP/acctCreateForm.php">Register</a>
                 </nav>
             </div>
         </header>
@@ -81,7 +82,7 @@
                     </a>
                 </div>
             </section>
-            <div class="phpDiv">
+            <!-- <div class="phpDiv">
                 <?php
                 $date = date("m-d-Y");
                 $today = date("l");
@@ -104,7 +105,7 @@
                     echo "THINGS HAVE GONE WRONG!!";
                 };
                 ?>
-            </div>
+            </div> -->
             <div id="listWrapper">
                 <div class="listDiv">
                     <ul class="listEdit" id="dayList">
@@ -122,11 +123,7 @@
                     <ul class="listEdit">
                         <li class="listHead">Location</li>
                         <li>1452 7th Ave S</li>
-                    </ul>
-                </div>
-                <div class="listDiv">
-                    <ul class="listEdit">
-                        <li class="listHead">Phone Number</li>
+                        <li class="listHead" id="pNum">Phone Number</li>
                         <li>(406)750-5642</li>
                     </ul>
                 </div>

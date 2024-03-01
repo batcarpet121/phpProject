@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'krona one', sans-serif;
 }
 
 html {
@@ -11,7 +12,6 @@ html {
 
 body {
     background-color: rgb(30, 29, 29);
-    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     color: white;
 }
@@ -62,7 +62,7 @@ nav a:hover {
 
 
 .bannerArea {
-    background-image: url(../IMG/dinerBackground.jpg);
+    background-image: url(../IMG/360_F_581529147_WU2dd2WR6CMKN81hX7jy8QB9vqJQGqOa.jpg);
     background-size: cover;
     background-position: center center;
     top: 6.25rem;
@@ -95,7 +95,6 @@ nav a:hover {
 
 .contentArea {
     width: 100%;
-    height: 70rem;
     position: relative;
     background: rgb(30, 29, 29);
     top: 24rem;
@@ -106,4 +105,139 @@ nav a:hover {
     margin: 0;
     margin-top: 1.8rem;
     letter-spacing: 0.4rem;
+}
+
+.phpDiv {
+    width: 30%;
+    float: left;
+    padding-left: 30px;
+    line-height: 4.25rem;
+    font-size: 1.7rem;
+    color:red;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 0.5px;
+}
+
+
+.php_p {
+    display: block;
+    margin: 10px;
+}
+
+.menuRow {
+    border: 2px solid rgba(105, 103, 103, 0.4);
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color:  rgb(36, 34, 34);
+}
+
+.menuItem {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    margin-left: 325px;
+    padding: 1rem;
+    box-shadow: 0 0 10px 5px rgba(255, 89, 89, 0.3);
+    background-color: rgb(63, 42, 42);
+}
+
+
+
+
+
+/* Footer list styling */
+#listWrapper > ul {
+    padding: 1rem;
+    list-style-type: none;
+}
+
+div.listDiv {
+    text-align: left;
+    display: inline-block;
+    margin: 1.2rem 0.3rem 0.6rem 6rem;
+    letter-spacing: 0.4rem;
+    font-size: 1.4rem;
+    vertical-align: top;
+    color: white;
+}
+
+#pNum {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px solid rgb(247, 156, 223);
+}
+
+li.listHead {
+    list-style: none;
+    font-weight: bold;
+    border-bottom: 1.2px solid gray;
+}
+
+#dayList {
+    border-right: 2px solid rgb(247, 156, 223);
+    border-left: 2px solid rgb(247, 156, 223);
+    list-style-type: none;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+ul.listEdit {
+    list-style-type: none;
+    margin-bottom: 10px;
+    line-height: 2rem;
+}
+
+#listWrapper {
+    background-color: rgb(68, 68, 68);
+}
+
+#dateSpecials {
+    padding-bottom: 18px;
+    margin-top: 60px;
+    font-size: 1.7rem;
+    border-bottom: 2px solid rgb(247, 156, 223);
+}
+
+#specialMenuDisplay {
+    padding-top: 8px;
+    margin-left: 17px;
+    color: rgb(225, 205, 205);
+}
+
+/* form styles */
+#loginForm {
+    display: flex;
+    justify-content: center;
+}
+
+#login_fname {
+    box-sizing: border-box;
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
+#login_passwd {
+    box-sizing: border-box;
+    width: 100px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
+.loginLabel {
+    margin: 3px;
+    font-size: 1.3rem;
+    color: rgb(219, 219, 219);
+}
+
+.loginSubmit {
+    margin-left: 10px;
+    width: 50px;
+    height: 30px;
 }
